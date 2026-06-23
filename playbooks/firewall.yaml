@@ -6,7 +6,7 @@
   
   vars:
     ansible_user: admin
-    ansible_ssh_private_key_file: /home/maks/.ssh/lab2-ssh-key
+    ansible_ssh_private_key_file: /home/maks/.ssh/project-ssh-key
   
   # firewall rules for web servers
   tasks:
@@ -65,7 +65,7 @@
 
   vars:
     ansible_user: admin
-    ansible_ssh_private_key_file: /home/maks/.ssh/lab2-ssh-key
+    ansible_ssh_private_key_file: /home/maks/.ssh/project-ssh-key
   
   # Firewall rules for prometheus
   tasks:

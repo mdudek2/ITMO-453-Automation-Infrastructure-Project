@@ -16,6 +16,11 @@ This repository contains all of the needed scripts, playbooks, and configuration
 2. Run the initial-hardening script
 3. Run the setup-firewall script
 4. Run the deploy-site script
+5. Run the openscap-hardening.sh script
+
+or just run automated-deploy.sh
+
+You will likely need to provide a sudo password at least on time during the deployment.
 
 ## Note
 

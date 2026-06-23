@@ -4,9 +4,9 @@
 echo "Generating an ssh key that will be used for administration on deployed servers..."
 sleep 3
 
-if [ ! -f ~/.ssh/lab2-ssh-key ]; then
+if [ ! -f ~/.ssh/project-ssh-key ]; then
   ssh-keygen -t ed25519 \
-    -f ~/.ssh/lab2-ssh-key \
+    -f ~/.ssh/project-ssh-key \
     -N "" \
     -C "automatically generated as part of lab2 deployment" \
     -q

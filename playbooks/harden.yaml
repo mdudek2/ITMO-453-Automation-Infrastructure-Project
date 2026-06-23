@@ -34,7 +34,7 @@
       ansible.posix.authorized_key:
         user: "{{ admin_user }}"
         state: present
-        key: "{{ lookup('file', '/home/maks/.ssh/lab2-ssh-key.pub') }}"
+        key: "{{ lookup('file', '/home/maks/.ssh/project-ssh-key.pub') }}"
     
     # allow the new admin user to use sudo without a password
     - name: Configure passwordless sudo for admin user
@@ -64,7 +64,7 @@
     # configure ssh to only accept keys for authentication
     - name: Install hardened SSH configuration
       ansible.builtin.copy:
-        src: /home/maks/Documents/repos/mdudek2/ITMO-453-lab2/configs/sshd_config.conf
+        src: /home/maks/Documents/repos/mdudek2/ITMO-453-Automation-Infrastructure-Project/configs/sshd_config.conf
         dest: /etc/ssh/sshd_config.d/sshd_config.conf
         owner: root
         group: root

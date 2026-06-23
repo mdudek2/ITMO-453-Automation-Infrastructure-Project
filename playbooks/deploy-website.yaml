@@ -6,7 +6,7 @@
 
   vars:
     ansible_user: admin
-    ansible_ssh_private_key_file: /home/maks/.ssh/lab2-ssh-key
+    ansible_ssh_private_key_file: /home/maks/.ssh/project-ssh-key
 
   tasks:
 
@@ -38,7 +38,7 @@
     # copy over configuration for the new site
     - name: Add nginx configuration
       ansible.builtin.copy:
-        src: "/home/maks/Documents/repos/mdudek2/ITMO-453-lab2/configs/hello-site.conf"
+        src: "/home/maks/Documents/repos/mdudek2/ITMO-453-Automation-Infrastructure-Project/configs/hello-site.conf"
         dest: /etc/nginx/sites-available/hello-site.conf
         owner: root
         group: root
@@ -47,7 +47,7 @@
     # copy the new website to each webserver
     - name: Copy website to servers
       ansible.builtin.copy:
-        src: "/home/maks/Documents/repos/mdudek2/ITMO-453-lab2/html/index.html"
+        src: "/home/maks/Documents/repos/mdudek2/ITMO-453-Automation-Infrastructure-Project/html/index.html"
         dest: /var/www/html/index.html
         owner: root
         group: root
@@ -72,7 +72,7 @@
     # copy the nginx metrics configuration file
     - name: Copy metrics.conf to nginx configuration
       ansible.builtin.copy:
-        src: "/home/maks/Documents/repos/mdudek2/ITMO-453-lab2/configs/metrics.conf"
+        src: "/home/maks/Documents/repos/mdudek2/ITMO-453-Automation-Infrastructure-Project/configs/metrics.conf"
         dest: /etc/nginx/conf.d/metrics.conf
         owner: root
         group: root
@@ -115,14 +115,14 @@
 
   vars:
     ansible_user: admin
-    ansible_ssh_private_key_file: /home/maks/.ssh/lab2-ssh-key
+    ansible_ssh_private_key_file: /home/maks/.ssh/project-ssh-key
 
   tasks:
     
     # copy the config file
     - name: Copy the prometheus configuration file
       ansible.builtin.copy:
-        src: "/home/maks/Documents/repos/mdudek2/ITMO-453-lab2/configs/prometheus.yml"
+        src: "/home/maks/Documents/repos/mdudek2/ITMO-453-Automation-Infrastructure-Project/configs/prometheus.yml"
         dest: /etc/prometheus/prometheus.yml
         owner: root
         group: root
@@ -131,7 +131,7 @@
     # copy the discover script. This script runs once and scans for hosts
     - name: Copy the host discovery script to the prometheus instance
       ansible.builtin.copy:
-        src: "/home/maks/Documents/repos/mdudek2/ITMO-453-lab2/scripts/discover-hosts.sh"
+        src: "/home/maks/Documents/repos/mdudek2/ITMO-453-Automation-Infrastructure-Project/scripts/discover-hosts.sh"
         dest: /etc/prometheus/discover-hosts.sh
         owner: root
         group: root
