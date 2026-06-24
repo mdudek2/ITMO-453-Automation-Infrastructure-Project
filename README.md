@@ -1,8 +1,8 @@
-# ITMO-453-lab2
+# ITMO-453 Automation and Infrastructure Project
 
 ## Requirements:
 
-1. A linux host system
+1. A linux host system capable of running three virtual machines at once
 2. Hardware that supports virtualization
 3. Oracle Virtualbox
 4. Ansible

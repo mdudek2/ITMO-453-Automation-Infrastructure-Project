@@ -68,7 +68,7 @@ This playbook collects various system logs from each of the servers and then exp
 
 This script runs on the host system. It makes use of VBoxManage to shut down all running machines and then proceeds to back up the .vdi files to a backup directory on the system.
 
+### `destroy.sh`
 
-
-
-
+This script is run on the host system. It shuts down and destroys the created virtual machines. It's main use is to clean up so that provision.sh
+can be safely run again.
